@@ -262,6 +262,25 @@
       transform: scale(1.05);
     }
 
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .hero-cta-secondary {
+      background: transparent;
+      border: 2px solid var(--accent);
+      color: var(--accent);
+    }
+    .hero-cta-secondary:hover {
+      background: var(--accent-glow);
+      border-color: var(--accent-hover);
+      color: var(--accent-hover);
+    }
+
     /* ============================================
        ABOUT
        ============================================ */
@@ -694,7 +713,10 @@
       <p class="hero-tagline">I build systems that replace enterprise software — without the enterprise price</p>
       <p class="hero-subtitle">Full-Stack Engineer · System Builder · Problem Solver</p>
       <p class="hero-location">Balik Pulau, Penang, Malaysia</p>
-      <a href="mailto:fdfrontdev@gmail.com" class="hero-cta">👋 Let's Talk</a>
+      <div class="hero-buttons">
+        <a href="mailto:fdfrontdev@gmail.com" class="hero-cta">👋 Let's Talk</a>
+        <a href="Mohamad_Firdaus_Resume_2026.pdf" class="hero-cta hero-cta-secondary" download>📄 Download Resume</a>
+      </div>
     </div>
   </section>
 
