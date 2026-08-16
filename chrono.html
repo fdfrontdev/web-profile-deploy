@@ -20,7 +20,7 @@
     :root {
       --bg: #0a0a0a; --bg-card: #141414; --bg-card-hover: #1c1c1c;
       --text: #e8e8e8; --text-secondary: #888888; --text-muted: #555555;
-      --accent: #22c55e; --accent-hover: #16a34a; --accent-glow: rgba(34,197,94,0.15);
+      --accent: #FFD700; --accent-hover: #ccb400; --accent-glow: rgba(255,215,0,0.14);
       --border: #222222; --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       --max-width: 900px;
     }
@@ -39,8 +39,11 @@
     .hero { padding: 120px 0 60px; text-align: center; }
     .hero h1 { font-size: 2.6rem; font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; }
     .hero h1 span { color: var(--accent); }
-    .hero .tagline { margin-top: 16px; font-size: 1.1rem; color: var(--text-secondary); max-width: 620px; margin-left: auto; margin-right: auto; }
+    .hero .tagline { margin-top: 16px; font-size: 1.25rem; color: var(--text); font-weight: 500; max-width: 660px; margin-left: auto; margin-right: auto; }
     .hero .proof { margin-top: 14px; font-size: 0.85rem; color: var(--text-muted); }
+    .hero-shot { margin-top: 36px; }
+    .hero-shot img { width: 100%; max-width: 760px; margin: 0 auto; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 24px 70px rgba(0,0,0,0.55); }
+    .hero-shot .proof { margin-top: 12px; }
     .cta-row { margin-top: 32px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
     .btn { display: inline-block; padding: 12px 26px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; transition: all 0.2s; }
     .btn-primary { background: var(--accent); color: #0a0a0a; }
@@ -105,6 +108,10 @@
         <a class="btn btn-ghost" href="https://github.com/fdfrontdev/gtav-chrono/releases/download/v1.0.2/Chrono-Setup-1.0.2.exe">One-click installer</a>
         <a class="btn btn-ghost" href="https://github.com/fdfrontdev/gtav-chrono">Source code</a>
       </div>
+      <div class="hero-shot">
+        <img src="chrono-shots/shot-2-dash.jpg" alt="The dash ability — CHRONO's live feed logs every use">
+        <p class="proof">Real gameplay capture — no renders, no mockups.</p>
+      </div>
     </header>
 
     <section id="features">
@@ -141,7 +148,8 @@
     <section>
       <h2>The honest part</h2>
       <div class="story">
-        <p><strong>Why this mod has tests at all:</strong> my first public build crashed the game at every launch. I blamed another mod — it was my own code. My AI pair programmer had invented a native function that doesn't exist in the game, and I shipped it without auditing the hash. One hash, one audit, one 4:33am deploy later, it was fixed. 526 tests now cover it.</p>
+        <p><strong>Why a justice system at all:</strong> I got bored of god-mode mods. Powers without consequences are just a cheat menu — so I built the paper trail.</p>
+        <p style="margin-top:12px"><strong>Why this mod has tests at all:</strong> my first public build crashed the game at every launch. I blamed another mod — it was my own code. My AI pair programmer had invented a native function that doesn't exist in the game, and I shipped it without auditing the hash. One hash, one audit, one 4:33am deploy later, it was fixed. 526 tests now cover it.</p>
       </div>
     </section>
 
@@ -149,12 +157,12 @@
       <h2>Screenshots</h2>
       <p class="sub">Real gameplay, captured in-game. No renders, no mockups.</p>
       <div class="shots">
-        <img src="chrono-shots/shot-4-timestop.jpg" alt="Time stop makes the news: witnesses baffled by a frozen moment">
-        <img src="chrono-shots/shot-5-invisible.jpg" alt="Invisibility, but the city still noticed — notoriety climbs">
-        <img src="chrono-shots/shot-6-escort.jpg" alt="Escort companion arrives — mood restored">
-        <img src="chrono-shots/shot-1-menu.jpg" alt="The CHRONO panel: wanted, notoriety, fame, energy">
-        <img src="chrono-shots/shot-2-dash.jpg" alt="Dash ability — the live feed logs every use">
-        <img src="chrono-shots/shot-3-road.jpg" alt="CHRONO status panel with wanted level during gameplay">
+        <img src="chrono-shots/shot-4-timestop.jpg" alt="Time stop makes the news: witnesses baffled by a frozen moment" loading="lazy">
+        <img src="chrono-shots/shot-5-invisible.jpg" alt="Invisibility, but the city still noticed — notoriety climbs" loading="lazy">
+        <img src="chrono-shots/shot-6-escort.jpg" alt="Escort companion arrives — mood restored" loading="lazy">
+        <img src="chrono-shots/shot-1-menu.jpg" alt="The CHRONO panel: wanted, notoriety, fame, energy" loading="lazy">
+        <img src="chrono-shots/shot-2-dash.jpg" alt="Dash ability — the live feed logs every use" loading="lazy">
+        <img src="chrono-shots/shot-3-road.jpg" alt="CHRONO status panel with wanted level during gameplay" loading="lazy">
       </div>
     </section>
 
