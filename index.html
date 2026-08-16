@@ -7,7 +7,7 @@
   <!-- Open Graph / Social Sharing -->
   <meta property="og:title" content="Mohamad Firdaus · Software Engineer">
   <meta property="og:description" content="Enterprise software is expensive. I build the replacement — and ship it. ERP, SaaS, AI systems, from scratch.">
-  <meta property="og:image" content="https://fdfrontdev.github.io/web-profile-deploy/profile.jpg">
+  <meta property="og:image" content="https://fdfrontdev.github.io/web-profile-deploy/og-profile.jpg">
   <meta property="og:url" content="https://fdfrontdev.github.io/web-profile-deploy/">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
@@ -235,6 +235,22 @@
       margin-bottom: 8px;
     }
 
+    .hero-trust {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+    }
+    .hero-trust span {
+      padding: 4px 12px;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      background: var(--bg-card);
+    }
+
     .hero-location {
       font-size: 0.82rem;
       color: var(--text-muted);
@@ -374,6 +390,24 @@
       border-color: var(--accent-glow);
       background: var(--bg-card-hover);
       transform: translateY(-4px);
+    }
+
+    .project-img {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .project-svg {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      margin-bottom: 16px;
+      display: block;
+      background: var(--bg);
     }
 
     .project-icon {
@@ -712,8 +746,12 @@
       <h1 class="hero-name">Mohamad Firdaus</h1>
       <p class="hero-tagline">Enterprise software is expensive. I build the replacement — and ship it.</p>
       <p class="hero-subtitle">Full-Stack Engineer · System Builder · Balik Pulau, Malaysia</p>
+      <div class="hero-trust">
+        <span>🏭 ERP</span><span>☁️ SaaS</span><span>🤖 AI/ML</span><span>🎮 Modding</span><span>Production, not prototypes</span>
+      </div>
       <div class="hero-buttons">
         <a href="mailto:fdfrontdev@gmail.com" class="hero-cta">👋 Let's Talk</a>
+        <a href="https://wa.me/60143043514" target="_blank" rel="noopener noreferrer" class="hero-cta hero-cta-secondary">💬 WhatsApp</a>
         <a href="Mohamad_Firdaus_Resume_2026.pdf" class="hero-cta hero-cta-secondary" download>📄 Download Resume</a>
       </div>
     </div>
@@ -728,11 +766,11 @@
       <h2 class="section-title">Who I Am</h2>
       <div class="about-grid">
         <div class="about-photo fade-in">
-          <img src="profile.jpg" alt="Mohamad Firdaus" class="profile-img">
+          <img src="profile-display.jpg" alt="Mohamad Firdaus" class="profile-img">
         </div>
         <div class="about-text fade-in">
           <p>
-            I'm self-taught, 15+ years in. My question never changed: why does the software
+            I'm self-taught. My question never changed: why does the software
             that runs a company cost millions — and still not fit the company? So I build
             from scratch. The ERP I led replaced SAP and Navision for the palm oil industry —
             supply chain, finance, HR, procurement, refinery operations. Production, not prototype.
@@ -749,8 +787,8 @@
         </div>
         <div class="about-stats fade-in">
           <div class="stat-card">
-            <div class="stat-number">15+</div>
-            <div class="stat-label">Years Building</div>
+            <div class="stat-number">5+</div>
+            <div class="stat-label">Industries Served</div>
           </div>
           <div class="stat-card">
             <div class="stat-number">7+</div>
@@ -779,10 +817,156 @@
       <div class="projects-grid">
 
         <div class="project-card fade-in">
+          <div class="project-icon">🏭</div>
+          <h3 class="project-title">Enterprise ERP — Palm Oil Industry</h3>
+          <p class="project-desc">
+            Full-scale ERP replacing SAP/Navision. Supply chain, finance, HR, procurement, and
+            refinery operations — database to frontend to deployment. Production for a
+            government-linked refinery.
+          </p>
+          <svg class="project-svg" viewBox="0 0 800 300" role="img" aria-label="ERP module map">
+            <rect x="330" y="110" width="140" height="60" rx="10" fill="#141414" stroke="#22c55e" stroke-width="2"/>
+            <text x="400" y="146" text-anchor="middle" fill="#e8e8e8" font-size="13" font-weight="600">ERP Core</text>
+            <rect x="40" y="40" width="150" height="50" rx="8" fill="#141414" stroke="#22c55e"/>
+            <text x="115" y="71" text-anchor="middle" fill="#e8e8e8" font-size="12">Supply Chain</text>
+            <rect x="230" y="200" width="150" height="50" rx="8" fill="#141414" stroke="#22c55e"/>
+            <text x="305" y="231" text-anchor="middle" fill="#e8e8e8" font-size="12">Finance</text>
+            <rect x="420" y="200" width="150" height="50" rx="8" fill="#141414" stroke="#22c55e"/>
+            <text x="495" y="231" text-anchor="middle" fill="#e8e8e8" font-size="12">HR</text>
+            <rect x="610" y="40" width="150" height="50" rx="8" fill="#141414" stroke="#22c55e"/>
+            <text x="685" y="71" text-anchor="middle" fill="#e8e8e8" font-size="12">Procurement</text>
+            <rect x="610" y="200" width="150" height="50" rx="8" fill="#141414" stroke="#22c55e"/>
+            <text x="685" y="231" text-anchor="middle" fill="#e8e8e8" font-size="12">Refinery Ops</text>
+            <line x1="190" y1="65" x2="330" y2="135" stroke="#555" stroke-width="1.5"/>
+            <line x1="305" y1="200" x2="380" y2="170" stroke="#555" stroke-width="1.5"/>
+            <line x1="495" y1="200" x2="430" y2="170" stroke="#555" stroke-width="1.5"/>
+            <line x1="610" y1="65" x2="470" y2="135" stroke="#555" stroke-width="1.5"/>
+            <line x1="685" y1="200" x2="480" y2="170" stroke="#555" stroke-width="1.5"/>
+          </svg>
+          <div class="project-tags">
+            <span class="project-tag">Nuxt</span>
+            <span class="project-tag">Vue</span>
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Prisma</span>
+            <span class="project-tag">PostgreSQL</span>
+          </div>
+        </div>
+
+        <div class="project-card fade-in">
+          <div class="project-icon">👥</div>
+          <h3 class="project-title">EMS — Nexus Delivery OS</h3>
+          <p class="project-desc">
+            SaaS platform for engineering teams — projects, delivery standards, and people in
+            one system. Built on the same standards I use to ship.
+          </p>
+          <svg class="project-svg" viewBox="0 0 800 300" role="img" aria-label="EMS system diagram">
+            <rect x="30" y="40" width="160" height="60" rx="8" fill="#141414" stroke="#22c55e"/>
+            <text x="110" y="76" text-anchor="middle" fill="#e8e8e8" font-size="12">Teams &amp; Roles</text>
+            <rect x="320" y="40" width="160" height="60" rx="8" fill="#141414" stroke="#22c55e"/>
+            <text x="400" y="76" text-anchor="middle" fill="#e8e8e8" font-size="12">Projects &amp; Tasks</text>
+            <rect x="610" y="40" width="160" height="60" rx="8" fill="#141414" stroke="#22c55e"/>
+            <text x="690" y="76" text-anchor="middle" fill="#e8e8e8" font-size="12">Delivery Standards</text>
+            <rect x="320" y="190" width="160" height="60" rx="8" fill="#141414" stroke="#22c55e"/>
+            <text x="400" y="226" text-anchor="middle" fill="#e8e8e8" font-size="12">Reports &amp; Oversight</text>
+            <line x1="190" y1="70" x2="320" y2="70" stroke="#555" stroke-width="1.5"/>
+            <line x1="480" y1="70" x2="610" y2="70" stroke="#555" stroke-width="1.5"/>
+            <line x1="400" y1="100" x2="400" y2="190" stroke="#555" stroke-width="1.5"/>
+            <text x="110" y="220" fill="#888" font-size="11">Multi-tenant · JWT · RBAC</text>
+          </svg>
+          <p style="font-size:0.82rem;color:var(--accent);margin-bottom:10px;">
+            <strong>🔗 Live demo:</strong> <a href="https://engineering-management-system.onrender.com" target="_blank" rel="noopener noreferrer" style="color:var(--accent);">engineering-management-system.onrender.com</a>
+          </p>
+          <details style="font-size:0.78rem;color:var(--text-secondary);margin-bottom:16px;padding:8px 12px;background:var(--bg);border:1px solid var(--border);border-radius:8px;">
+            <summary style="cursor:pointer;color:var(--text-secondary);">Demo credentials (admin123)</summary>
+            admin@nexusdemo.com · owner@nexusdemo.com · manager@nexusdemo.com · lead@nexusdemo.com · engineer@nexusdemo.com
+          </details>
+          <div class="project-tags">
+            <span class="project-tag">Nuxt</span>
+            <span class="project-tag">Vue</span>
+            <span class="project-tag">Vuetify</span>
+            <span class="project-tag">Prisma</span>
+            <span class="project-tag">TypeScript</span>
+            <span class="project-tag">Render</span>
+          </div>
+        </div>
+
+        <div class="project-card fade-in">
+          <div class="project-icon">📈</div>
+          <h3 class="project-title">TradeAI</h3>
+          <p class="project-desc">
+            ML forex decision-support system. My own backtest lied to me for two weeks — I
+            audited it, published the leak, and rebuilt. Honest numbers only.
+          </p>
+          <svg class="project-svg" viewBox="0 0 800 300" role="img" aria-label="TradeAI pipeline">
+            <rect x="20" y="120" width="120" height="50" rx="8" fill="#141414" stroke="#22c55e"/>
+            <text x="80" y="150" text-anchor="middle" fill="#e8e8e8" font-size="12">Market Data</text>
+            <rect x="180" y="120" width="120" height="50" rx="8" fill="#141414" stroke="#22c55e"/>
+            <text x="240" y="150" text-anchor="middle" fill="#e8e8e8" font-size="12">Features</text>
+            <rect x="340" y="120" width="120" height="50" rx="8" fill="#141414" stroke="#22c55e"/>
+            <text x="400" y="150" text-anchor="middle" fill="#e8e8e8" font-size="12">Probability</text>
+            <rect x="500" y="120" width="120" height="50" rx="8" fill="#141414" stroke="#22c55e"/>
+            <text x="560" y="150" text-anchor="middle" fill="#e8e8e8" font-size="12">Risk Gate</text>
+            <rect x="660" y="120" width="120" height="50" rx="8" fill="#141414" stroke="#22c55e"/>
+            <text x="720" y="150" text-anchor="middle" fill="#e8e8e8" font-size="12">MT4 Exec</text>
+            <line x1="140" y1="145" x2="180" y2="145" stroke="#555" stroke-width="1.5"/>
+            <line x1="300" y1="145" x2="340" y2="145" stroke="#555" stroke-width="1.5"/>
+            <line x1="460" y1="145" x2="500" y2="145" stroke="#555" stroke-width="1.5"/>
+            <line x1="620" y1="145" x2="660" y2="145" stroke="#555" stroke-width="1.5"/>
+            <text x="400" y="70" text-anchor="middle" fill="#888" font-size="11">Calibrated probabilities · EV gating · audit trail</text>
+            <text x="400" y="240" text-anchor="middle" fill="#22c55e" font-size="11">No lookahead. If the backtest can't prove it, it doesn't trade.</text>
+          </svg>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">ML</span>
+            <span class="project-tag">FastAPI</span>
+            <span class="project-tag">Pandas</span>
+            <span class="project-tag">MT4</span>
+          </div>
+        </div>
+
+        <div class="project-card fade-in">
+          <div class="project-icon">🤝</div>
+          <h3 class="project-title">Agent Network — Commission Platform</h3>
+          <p class="project-desc">
+            Commission platform for the licensed money-lending industry: configurable rules,
+            tier ladders, offline sync, and three role portals.
+          </p>
+          <svg class="project-svg" viewBox="0 0 800 300" role="img" aria-label="Commission flow">
+            <rect x="300" y="30" width="200" height="60" rx="8" fill="#141414" stroke="#22c55e"/>
+            <text x="400" y="66" text-anchor="middle" fill="#e8e8e8" font-size="12">Platform Admin</text>
+            <rect x="300" y="120" width="200" height="60" rx="8" fill="#141414" stroke="#22c55e"/>
+            <text x="400" y="156" text-anchor="middle" fill="#e8e8e8" font-size="12">Tenant (Lender)</text>
+            <rect x="300" y="210" width="200" height="60" rx="8" fill="#141414" stroke="#22c55e"/>
+            <text x="400" y="246" text-anchor="middle" fill="#e8e8e8" font-size="12">Agents (3-tier upline)</text>
+            <line x1="400" y1="90" x2="400" y2="120" stroke="#555" stroke-width="1.5"/>
+            <line x1="400" y1="180" x2="400" y2="210" stroke="#555" stroke-width="1.5"/>
+            <text x="420" y="108" fill="#888" font-size="10">configures</text>
+            <text x="420" y="198" fill="#888" font-size="10">commission</text>
+            <text x="60" y="60" fill="#888" font-size="11">Configurable rules · offline sync · PWA</text>
+          </svg>
+          <p style="font-size:0.82rem;color:var(--accent);margin-bottom:10px;">
+            <strong>🔗 Live demo:</strong> <a href="https://agent-network-platform-xhq8.onrender.com" target="_blank" rel="noopener noreferrer" style="color:var(--accent);">agent-network-platform.onrender.com</a>
+          </p>
+          <details style="font-size:0.78rem;color:var(--text-secondary);margin-bottom:16px;padding:8px 12px;background:var(--bg);border:1px solid var(--border);border-radius:8px;">
+            <summary style="cursor:pointer;color:var(--text-secondary);">Demo credentials (admin123)</summary>
+            admin@platform.com · admin@demo-loan.co (subdomain demo-loan) · agent-1@demo-loan.co
+          </details>
+          <div class="project-tags">
+            <span class="project-tag">Nuxt</span>
+            <span class="project-tag">Vue</span>
+            <span class="project-tag">Vuetify</span>
+            <span class="project-tag">Prisma</span>
+            <span class="project-tag">MySQL</span>
+            <span class="project-tag">PWA</span>
+          </div>
+        </div>
+
+        <div class="project-card fade-in">
           <div class="project-icon">⚡</div>
           <h3 class="project-title">CHRONO — Justice System for GTA V</h3>
+          <img src="chrono-shots/shot-v2-1.jpg" alt="CHRONO gameplay — superpower dash in GTA V" class="project-img" loading="lazy">
           <p class="project-desc">
-            Free open-source GTA V mod where powers leave a paper trail: witnesses, news reports, notoriety, and a police force that remembers your face. Superpowers menu, WEBNET live feed, notoriety &amp; fame, face-on-file, custody law, mood system. 526 automated tests.
+            Free open-source GTA V mod where powers leave a paper trail: witnesses, news reports, notoriety, and a police force that remembers your face. 526 automated tests.
           </p>
           <p style="font-size:0.82rem;color:var(--accent);margin-bottom:10px;">
             <strong>🔗 Page + download:</strong> <a href="chrono.html" style="color:var(--accent);">chrono.html</a> · <a href="https://github.com/fdfrontdev/gtav-chrono/releases/tag/v1.0.2" target="_blank" rel="noopener noreferrer" style="color:var(--accent);">v1.0.2 release</a>
@@ -796,105 +980,30 @@
         </div>
 
         <div class="project-card fade-in">
-          <div class="project-icon">🏭</div>
-          <h3 class="project-title">Enterprise ERP</h3>
-          <p class="project-desc">
-            Full-scale ERP system replacing SAP/Navision for palm oil industry. Supply chain, finance, HR, procurement, and refinery operations.
-          </p>
-          <div class="project-tags">
-            <span class="project-tag">Nuxt</span>
-            <span class="project-tag">Vue</span>
-            <span class="project-tag">Python</span>
-            <span class="project-tag">Prisma</span>
-            <span class="project-tag">PostgreSQL</span>
-          </div>
-        </div>
-
-        <div class="project-card fade-in">
-          <div class="project-icon">📈</div>
-          <h3 class="project-title">TradeAI</h3>
-          <p class="project-desc">
-            ML forex decision-support system. My own backtest lied to me for two weeks — I
-            audited it, published the leak, and rebuilt. Honest numbers only.
-          </p>
-          <div class="project-tags">
-            <span class="project-tag">Python</span>
-            <span class="project-tag">ML</span>
-            <span class="project-tag">FastAPI</span>
-            <span class="project-tag">Pandas</span>
-            <span class="project-tag">MT4</span>
-          </div>
-        </div>
-
-        <div class="project-card fade-in">
-          <div class="project-icon">👥</div>
-          <h3 class="project-title">EMS — Nexus Delivery OS</h3>
-          <p class="project-desc">
-            SaaS platform for engineering teams — projects, delivery standards, and people in
-            one system. Built on the same standards I use to ship.
-          </p>
-          <p style="font-size:0.82rem;color:var(--accent);margin-bottom:10px;">
-            <strong>🔗 Live demo:</strong> <a href="https://engineering-management-system.onrender.com" target="_blank" rel="noopener noreferrer" style="color:var(--accent);">engineering-management-system.onrender.com</a>
-          </p>
-          <p style="font-size:0.82rem;color:var(--text-secondary);margin-bottom:16px;padding:10px 14px;background:var(--bg);border:1px solid var(--border);border-radius:8px;">
-            <strong>Demo credentials</strong> (password <code style="color:var(--accent);">admin123</code> for all):<br>
-            Platform Admin — <code style="color:var(--accent);">admin@nexusdemo.com</code><br>
-            Owner (Tenant Admin) — <code style="color:var(--accent);">owner@nexusdemo.com</code><br>
-            Engineering Manager — <code style="color:var(--accent);">manager@nexusdemo.com</code><br>
-            Lead Engineer — <code style="color:var(--accent);">lead@nexusdemo.com</code><br>
-            Engineer — <code style="color:var(--accent);">engineer@nexusdemo.com</code>
-          </p>
-          <div class="project-tags">
-            <span class="project-tag">Nuxt</span>
-            <span class="project-tag">Vue</span>
-            <span class="project-tag">Vuetify</span>
-            <span class="project-tag">Prisma</span>
-            <span class="project-tag">TypeScript</span>
-            <span class="project-tag">Render</span>
-          </div>
-        </div>
-
-        <div class="project-card fade-in">
-          <div class="project-icon">🤝</div>
-          <h3 class="project-title">Agent Network — Commission Platform</h3>
-          <p class="project-desc">
-            Commission platform for the licensed money-lending industry: configurable rules,
-            tier ladders, offline sync, and three role portals.
-          </p>
-          <p style="font-size:0.82rem;color:var(--accent);margin-bottom:10px;">
-            <strong>🔗 Live demo:</strong> <a href="https://agent-network-platform-xhq8.onrender.com" target="_blank" rel="noopener noreferrer" style="color:var(--accent);">agent-network-platform.onrender.com</a>
-          </p>
-          <p style="font-size:0.82rem;color:var(--text-secondary);margin-bottom:16px;padding:10px 14px;background:var(--bg);border:1px solid var(--border);border-radius:8px;">
-            <strong>Demo credentials:</strong><br>
-            Platform Admin — <code style="color:var(--accent);">admin@platform.com</code> / <code style="color:var(--accent);">admin123</code><br>
-            Tenant Admin — <code style="color:var(--accent);">admin@demo-loan.co</code> / <code style="color:var(--accent);">admin123</code> (subdomain: <code style="color:var(--accent);">demo-loan</code>)<br>
-            Agent — <code style="color:var(--accent);">agent-1@demo-loan.co</code> / <code style="color:var(--accent);">admin123</code>
-          </p>
-          <div class="project-tags">
-            <span class="project-tag">Nuxt</span>
-            <span class="project-tag">Vue</span>
-            <span class="project-tag">Vuetify</span>
-            <span class="project-tag">Prisma</span>
-            <span class="project-tag">MySQL</span>
-            <span class="project-tag">TypeScript</span>
-            <span class="project-tag">PWA</span>
-            <span class="project-tag">Render</span>
-          </div>
-        </div>
-
-        <div class="project-card fade-in">
           <div class="project-icon">🧠</div>
           <h3 class="project-title">Second Brain</h3>
           <p class="project-desc">
             A personal AI that remembers: 125,000+ documents, semantic search, knowledge
             graphs. My memory has limits — my knowledge shouldn't.
           </p>
+          <svg class="project-svg" viewBox="0 0 800 300" role="img" aria-label="Second Brain knowledge graph">
+            <circle cx="400" cy="150" r="45" fill="#141414" stroke="#22c55e" stroke-width="2"/>
+            <text x="400" y="155" text-anchor="middle" fill="#e8e8e8" font-size="12" font-weight="600">Knowledge</text>
+            <circle cx="150" cy="80" r="30" fill="#141414" stroke="#555"/>
+            <circle cx="650" cy="80" r="30" fill="#141414" stroke="#555"/>
+            <circle cx="150" cy="230" r="30" fill="#141414" stroke="#555"/>
+            <circle cx="650" cy="230" r="30" fill="#141414" stroke="#555"/>
+            <line x1="180" y1="95" x2="355" y2="135" stroke="#555" stroke-width="1.5"/>
+            <line x1="620" y1="95" x2="445" y2="135" stroke="#555" stroke-width="1.5"/>
+            <line x1="180" y1="215" x2="355" y2="170" stroke="#555" stroke-width="1.5"/>
+            <line x1="620" y1="215" x2="445" y2="170" stroke="#555" stroke-width="1.5"/>
+            <text x="400" y="60" text-anchor="middle" fill="#888" font-size="11">Docs → embeddings → graph (46 domain hubs)</text>
+          </svg>
           <div class="project-tags">
             <span class="project-tag">Python</span>
             <span class="project-tag">ChromaDB</span>
             <span class="project-tag">LLM</span>
             <span class="project-tag">FastAPI</span>
-            <span class="project-tag">SQLite</span>
           </div>
         </div>
 
@@ -1041,6 +1150,7 @@
 
       <div class="contact-links">
         <a href="mailto:fdfrontdev@gmail.com" class="contact-link">📧 fdfrontdev@gmail.com</a>
+        <a href="https://wa.me/60143043514" target="_blank" rel="noopener noreferrer" class="contact-link">💬 WhatsApp</a>
         <a href="https://www.linkedin.com/in/mohamad-firdaus-mohamad-fauzi-310672294" target="_blank" rel="noopener noreferrer" class="contact-link">🔗 LinkedIn</a>
         <a href="https://github.com/fdfrontdev" target="_blank" rel="noopener noreferrer" class="contact-link">🐙 GitHub</a>
       </div>
