@@ -77,14 +77,26 @@
   }
 
   .sidebar .tag {
-    display: inline-block;
-    background: rgba(34, 197, 94, 0.12);
-    color: #4ade80;
-    font-size: 6.5pt;
-    padding: 1.5px 7px;
-    border-radius: 3px;
-    margin: 1px 0;
-  }
+      display: inline-block;
+      background: rgba(34, 197, 94, 0.06);
+      color: #74c69d;
+      font-size: 6.5pt;
+      padding: 1.5px 7px;
+      border-radius: 3px;
+      margin: 1px 0;
+    }
+
+    .skills-cluster {
+      margin-top: 5px;
+    }
+    .skills-cluster-name {
+      font-size: 5.8pt;
+      font-weight: 600;
+      color: #8a8a9a;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 2px;
+    }
 
   .sidebar .item {
     font-size: 7pt;
@@ -262,30 +274,22 @@
     </div>
 
     <div>
-      <h3>Skills</h3>
-      <div class="item">
-        <span class="tag">ERP Architecture</span>
-        <span class="tag">MES / Industry 4.0</span>
-        <span class="tag">C#</span>
-        <span class="tag">.NET</span>
-        <span class="tag">ASP.NET Core</span>
-        <span class="tag">Entity Framework</span>
-        <span class="tag">Microsoft SQL Server</span>
-        <span class="tag">Docker</span>
-        <span class="tag">Real-Time Systems</span>
-        <span class="tag">Full-Stack Dev</span>
-        <span class="tag">Nuxt 3 / Vue 3</span>
-        <span class="tag">Vuetify</span>
-        <span class="tag">TypeScript</span>
-        <span class="tag">Prisma</span>
-        <span class="tag">PostgreSQL</span>
-        <span class="tag">FastAPI</span>
-        <span class="tag">Python</span>
-        <span class="tag">Scikit-Learn</span>
-        <span class="tag">Git / CI/CD</span>
-        <span class="tag">TDD</span>
-      </div>
-    </div>
+          <h3>Skills</h3>
+          <div class="item">
+            <div class="skills-cluster">
+              <div class="skills-cluster-name">Systems · Enterprise</div>
+              <span class="tag">ERP Architecture</span><span class="tag">MES / Industry 4.0</span><span class="tag">Real-Time Systems</span><span class="tag">C#</span><span class="tag">.NET</span><span class="tag">ASP.NET Core</span><span class="tag">Entity Framework</span><span class="tag">Microsoft SQL Server</span><span class="tag">Docker</span>
+            </div>
+            <div class="skills-cluster">
+              <div class="skills-cluster-name">Web · Full-Stack</div>
+              <span class="tag">Nuxt 3 / Vue 3</span><span class="tag">Vuetify</span><span class="tag">TypeScript</span><span class="tag">Prisma</span><span class="tag">PostgreSQL</span><span class="tag">FastAPI</span>
+            </div>
+            <div class="skills-cluster">
+              <div class="skills-cluster-name">Data · AI · Quality</div>
+              <span class="tag">Python</span><span class="tag">Scikit-Learn</span><span class="tag">Git / CI/CD</span><span class="tag">TDD</span>
+            </div>
+          </div>
+        </div>
 
     <div>
       <h3>Education</h3>
@@ -315,9 +319,9 @@
 
         <div style="margin-top: auto;">
           <h3>Availability</h3>
-          <div class="item">
-            Full-Time<br>Freelance Consulting<br>Remote Worldwide
-          </div>
+                <div class="item">
+                  Full-Time<br>Freelance Consulting — replacements in months, not millions<br>Remote Worldwide
+                </div>
           <div class="item" style="margin-top:10px;color:#8a8a9a;font-size:6.5pt;line-height:1.5;">
             🏗️ Built under <strong style="color:#bbb;">FIRDAUS BUILDS</strong> — one rule: if it doesn't work for real people, it doesn't ship.
           </div>
@@ -328,29 +332,30 @@
   <div class="main">
     <div class="header">
       <h1>Mohamad Firdaus</h1>
-      <div class="hook">Built an ERP that replaced SAP, from scratch.</div>
+      <div class="hook">Built an ERP that replaced SAP, from scratch — a refinery runs on it.</div>
       <div class="sub">Senior Software Engineer · 15+ Years · Full-Stack · C# / .NET · Real-Time Systems · Balik Pulau, Penang</div>
     </div>
 
     <div class="value-prop">
-      <strong>Who I Am —</strong> Self-taught engineer who built a complete ERP replacing SAP/Navision for the palm oil industry — manufacturing execution, supply chain, finance, HR, procurement, refinery operations. Main stack: Nuxt 3, Vue 3, Vuetify, TypeScript, Prisma, MariaDB/MySQL, Python. Enterprise .NET foundation from Microsoft Dynamics AX custom plugin development — C#. Real-time: live AI trading pipeline in production. 15+ years across finance, retail, education, recruitment tech, and palm oil. I build systems that solve real business problems — not prototypes, not toys.
-    </div>
+          <strong>Who I Am —</strong> Self-taught engineer who built a complete ERP replacing SAP/Navision for a palm oil refinery — manufacturing execution, supply chain, finance, HR, procurement. Main stack: Nuxt 3, Vue 3, Vuetify, TypeScript, Prisma, Python — with an enterprise .NET foundation from Microsoft Dynamics AX custom plugin development (C#). I also run a live AI trading pipeline in production. I build systems that solve real business problems — not prototypes, not toys.
+        </div>
 
     <div>
       <div class="section-title">Experience</div>
 
       <div class="exp-item">
         <div class="exp-header">
-          <span class="title">Senior Software Engineer / Head of Software</span>
-          <span class="period">2024 – Present</span>
-        </div>
-        <div class="exp-company">GlobalIoT Sdn Bhd</div>
-        <ul class="exp-bullets">
-          <li>Architected and built the company's core ERP system — replacing SAP/Navision for palm oil refinery operations (supply chain, finance, HR, procurement, operations)</li>
-          <li>Led a team of engineers, established code review, CI/CD, and development standards</li>
-          <li>Wore 7 hats: BA, PM, Architect, Developer, QA, Support Lead, Mentor</li>
-          <li>Served a government-linked client (Sawit Kinabalu / Kunak Refinery)</li>
-        </ul>
+                  <span class="title" style="color:#15803d;">Senior Software Engineer / Head of Software</span>
+                  <span class="period">2024 – Present</span>
+                </div>
+                <div class="exp-company">GlobalIoT Sdn Bhd</div>
+                <ul class="exp-bullets">
+                  <li>Architected and built the company's core ERP replacing SAP/Navision — manufacturing execution for palm oil refinery operations (supply chain, finance, HR, procurement)</li>
+                  <li>Mission-critical and always-on: the refinery runs on it — downtime is lost production</li>
+                  <li>Led a team of engineers, established code review, CI/CD, and development standards</li>
+                  <li>Wore 7 hats: BA, PM, Architect, Developer, QA, Support Lead, Mentor</li>
+                  <li>Served a government-linked client (Sawit Kinabalu / Kunak Refinery)</li>
+                </ul>
       </div>
 
       <div class="exp-item">
@@ -372,9 +377,8 @@
         </div>
         <div class="exp-company">GAMA Supermarket &amp; Dept Store</div>
         <ul class="exp-bullets">
-          <li>Built e-commerce platform from scratch for a major retail chain</li>
-          <li>Managed department and cross-functional coordination</li>
-        </ul>
+                  <li>Built e-commerce platform from scratch for a major retail chain; ran the department end-to-end — product, payments, fulfillment</li>
+                </ul>
       </div>
 
       <div class="exp-item">
@@ -453,7 +457,8 @@
     <div class="closer">
       <strong>Why hire me?</strong> I replaced SAP with a custom ERP. I built 7 production systems from zero.
       15 years of self-taught engineering across 5 industries. I lead teams, architect solutions, and ship
-      code that works. <strong>Most engineers write code. I build businesses.</strong>
+      code that works. <strong>Most engineers write code. I build businesses.</strong><br>
+      <span style="font-weight:400;">References available on request.</span>
     </div>
   </div>
 
