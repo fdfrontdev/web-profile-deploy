@@ -26,7 +26,7 @@ This is a static site. Deploy anywhere that serves HTML:
 
 - **Hero** — Name, tagline, location, CTA
 - **About** — Bio + stats cards
-- **Projects** — 4 featured projects with tech tags
+- **Projects** — featured projects with verified evidence and live links where available
 - **Services** — 4 service offerings
 - **Skills** — Tech stack badges by category
 - **Contact** — Email, LinkedIn, GitHub links
