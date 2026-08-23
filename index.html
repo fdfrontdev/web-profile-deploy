@@ -55,6 +55,7 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.8;
+      overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
@@ -654,8 +655,36 @@
       .nav-links.open {
         display: flex;
       }
+      .nav-inner {
+        width: 100%;
+      }
+
       .nav-toggle {
         display: block;
+        flex: 0 0 auto;
+      }
+
+      .hero-content {
+        width: 100%;
+      }
+
+      .hero-trust {
+        max-width: 100%;
+      }
+
+      .hero-tagline,
+      .hero-subtitle {
+        overflow-wrap: anywhere;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero-cta {
+        width: min(100%, 280px);
+        justify-content: center;
       }
 
       .hero-name {
@@ -1041,6 +1070,21 @@
             <span class="project-tag">ChromaDB</span>
             <span class="project-tag">LLM</span>
             <span class="project-tag">FastAPI</span>
+          </div>
+        </div>
+
+        <div class="project-card fade-in">
+          <div class="project-icon">🧠</div>
+          <h3 class="project-title">Private Local AI Assistant</h3>
+          <p class="project-desc">
+            Ongoing private/local engineering project with replaceable model routing, document retrieval,
+            typed capability boundaries and redacted review. Built for private use; no public demo.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Local AI</span>
+            <span class="project-tag">Retrieval</span>
+            <span class="project-tag">LLM Integration</span>
           </div>
         </div>
 
