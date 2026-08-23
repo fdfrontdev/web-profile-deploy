@@ -76,7 +76,7 @@ const doc = new Document({
 
       // EXPERIENCE
       sectionTitle('Experience'),
-      ...expHeader('Senior Software Engineer / Head of Software', '2024 – Present', 'GlobalIoT Sdn Bhd'),
+      ...expHeader('Senior Software Engineer / Head of Software', '2024 – Aug 2026', 'GlobalIoT Sdn Bhd'),
       bullet("Architected and built the company's core ERP system — manufacturing execution, supply chain, finance, HR, procurement for palm oil refinery operations — replacing SAP/Navision"),
       bullet('Led a team of engineers, established code review, CI/CD, and development standards'),
       bullet('Wore 7 hats: BA, PM, Architect, Developer, QA, Support Lead, Mentor'),
@@ -110,6 +110,7 @@ const doc = new Document({
       bullet('EMS — Engineering Mgmt: SaaS for managing teams and projects with engineering standards. Nuxt · Vue · Vuetify · Prisma · TypeScript'),
       bullet('Agent Network — Commission SaaS: multi-tenant commission & referral platform. Nuxt · Vue · Vuetify · Prisma · MySQL · TypeScript'),
       bullet('Second Brain — AI Knowledge: AI system with 125K+ docs, semantic search, knowledge graphs. Python · ChromaDB · LLM · FastAPI · SQLite'),
+      bullet('Private Local AI Assistant — private/local AI build with model routing, document retrieval, typed safety boundaries and redacted review. Python · Local AI · Retrieval'),
 
       // EDUCATION
       sectionTitle('Education'),
