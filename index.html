@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Mohamad Firdaus — Full-Stack Engineer & System Builder. Enterprise software is expensive. I build the replacement — and ship it.">
+  <meta name="description" content="Mohamad Firdaus — Senior Software Engineer building ERP/MES systems, workflow automation and AI-enabled tools in Penang, Malaysia.">
   <!-- Open Graph / Social Sharing -->
-  <meta property="og:title" content="Mohamad Firdaus · Software Engineer">
-  <meta property="og:description" content="Enterprise software is expensive. I build the replacement — and ship it. ERP, SaaS, AI systems, from scratch.">
+  <meta property="og:title" content="Mohamad Firdaus · ERP/MES Software Engineer">
+  <meta property="og:description" content="Senior Software Engineer building ERP/MES systems, workflow automation and AI-enabled tools in Penang, Malaysia.">
   <meta property="og:image" content="https://fdfrontdev.github.io/web-profile-deploy/og-profile.jpg">
   <meta property="og:url" content="https://fdfrontdev.github.io/web-profile-deploy/">
   <meta property="og:type" content="website">
@@ -202,6 +202,8 @@
 
     .hero-greeting {
       display: inline-block;
+      max-width: 100%;
+      box-sizing: border-box;
       font-size: 0.82rem;
       font-weight: 500;
       color: var(--accent);
@@ -234,10 +236,13 @@
       font-size: 0.88rem;
       color: var(--text-muted);
       margin-bottom: 8px;
+      overflow-wrap: anywhere;
     }
 
     .hero-trust {
       display: flex;
+      width: 100%;
+      box-sizing: border-box;
       gap: 10px;
       justify-content: center;
       flex-wrap: wrap;
@@ -450,6 +455,59 @@
     .project-tag:hover {
       border-color: var(--accent);
       color: var(--accent);
+    }
+
+    /* ============================================
+       PROOF / CASE STUDIES
+       ============================================ */
+    #proof {
+      background: var(--bg);
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .proof-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .proof-label {
+      color: var(--accent);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .proof-card h3 {
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    .proof-card p {
+      color: var(--text-secondary);
+      font-size: 0.84rem;
+      line-height: 1.65;
+    }
+
+    .proof-link {
+      display: inline-block;
+      margin-top: 14px;
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .proof-link:hover {
+      text-decoration: underline;
     }
 
     /* ============================================
@@ -670,6 +728,7 @@
 
       .hero-trust {
         max-width: 100%;
+        width: 100%;
       }
 
       .hero-tagline,
@@ -710,6 +769,10 @@
       }
 
       .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .proof-grid {
         grid-template-columns: 1fr;
       }
 
@@ -754,6 +817,7 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#proof">Proof</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -771,17 +835,18 @@
        ============================================ -->
   <section id="hero">
     <div class="hero-content">
-      <span class="hero-greeting">Available for remote work</span>
+      <span class="hero-greeting">Available for full-time software engineering · Selected workflow automation</span>
       <h1 class="hero-name">Mohamad Firdaus</h1>
-      <p class="hero-tagline">Enterprise software is expensive. I build the replacement — and ship it.</p>
-      <p class="hero-subtitle">Full-Stack Engineer · System Builder · Balik Pulau, Malaysia</p>
+      <p class="hero-tagline">I build software that turns complex operations into reliable systems.</p>
+      <p class="hero-subtitle">Senior Software Engineer · ERP/MES · C#/.NET · Python · Nuxt/Vue · Penang, Malaysia</p>
       <div class="hero-trust">
-        <span>🏭 ERP</span><span>☁️ SaaS</span><span>🤖 AI/ML</span><span>🎮 Modding</span><span>Production, not prototypes</span>
+        <span>🏭 ERP/MES</span><span>🧩 Workflow automation</span><span>⚙️ C#/.NET</span><span>🤖 AI-enabled tools</span><span>Proof over promises</span>
       </div>
       <div class="hero-buttons">
         <a href="mailto:fdfrontdev@gmail.com" class="hero-cta">👋 Let's Talk</a>
         <a href="https://wa.me/60143043514" target="_blank" rel="noopener noreferrer" class="hero-cta hero-cta-secondary">💬 WhatsApp</a>
-        <a href="Mohamad_Firdaus_Resume_2026.pdf" class="hero-cta hero-cta-secondary" download>📄 Download Resume</a>
+        <a href="Mohamad_Firdaus_Resume_ATS_2026.pdf" class="hero-cta hero-cta-secondary" download>📄 Download ATS Resume</a>
+        <a href="resume.html" class="hero-cta hero-cta-secondary">🖥️ View designed resume</a>
       </div>
     </div>
   </section>
@@ -799,19 +864,18 @@
         </div>
         <div class="about-text fade-in">
           <p>
-            I'm self-taught. My question never changed: why does the software
-            that runs a company cost millions — and still not fit the company? So I build
-            from scratch. The ERP I led replaced SAP and Navision for the palm oil industry —
-            supply chain, finance, HR, procurement, refinery operations. Production, not prototype.
+            I'm self-taught. I build software for teams whose workflows have outgrown spreadsheets
+            and generic enterprise tools. The ERP I led replaced SAP and Navision for refinery
+            operations across supply chain, finance, HR, procurement and manufacturing execution.
           </p>
           <p>
-            I build for myself too. My AI trading system looked profitable for weeks — until
-            I audited my own backtest and found the leak. I published the audit anyway.
-            Numbers that hide their flaws help nobody.
+            I build for myself too. When a private ML decision-support system produced attractive
+            backtest results, I audited it, found the leak and documented the failure. Evidence matters
+            more than a polished claim.
           </p>
           <p>
-            One rule for everything I ship — ERPs, SaaS platforms, knowledge systems, even a
-            GTA V mod with 526 automated tests: if it doesn't work for real people, it doesn't ship.
+            My rule is simple: if it does not work for real people, it does not ship. That applies to
+            ERP, SaaS, AI knowledge systems and CHRONO, a public C#/.NET mod with 526 automated tests.
           </p>
         </div>
         <div class="about-stats fade-in">
@@ -829,7 +893,7 @@
           </div>
           <div class="stat-card">
             <div class="stat-number">🌏</div>
-            <div class="stat-label">Remote Worldwide</div>
+            <div class="stat-label">Penang + Remote</div>
           </div>
         </div>
       </div>
@@ -850,8 +914,8 @@
           <h3 class="project-title">Enterprise ERP — Palm Oil Industry</h3>
           <p class="project-desc">
             Full-scale ERP replacing SAP/Navision. Supply chain, finance, HR, procurement, and
-            refinery operations — database to frontend to deployment. Production for a
-            government-linked refinery.
+            refinery operations — database to frontend to deployment. Production software for a
+            confidential refinery client.
           </p>
           <svg class="project-svg" viewBox="0 0 800 300" role="img" aria-label="ERP module map">
             <rect x="330" y="110" width="140" height="60" rx="10" fill="#141414" stroke="#22c55e" stroke-width="2"/>
@@ -902,11 +966,8 @@
             <line x1="400" y1="100" x2="400" y2="190" stroke="#555" stroke-width="1.5"/>
             <text x="110" y="220" fill="#888" font-size="11">Multi-tenant · JWT · RBAC</text>
           </svg>
-          <p style="font-size:0.82rem;color:var(--accent);margin-bottom:10px;">
-            <strong>🔗 Live demo:</strong> <a href="https://patricia-mothers-victoria-lie.trycloudflare.com" target="_blank" rel="noopener noreferrer" style="color:var(--accent);">Open EMS local demo</a> (temporary Quick Tunnel)
-          </p>
           <p style="font-size:0.82rem;color:var(--text-secondary);margin-bottom:16px;">
-            <strong>✅ Database-backed smoke check:</strong> MySQL 8.0, Prisma migrations, administrator login, and an authenticated workspace route verified. Demo database currently has no project records.
+            <strong>Evidence:</strong> architecture and implementation case study available. Public demo paused until a stable, owner-verified route is available.
           </p>
           <div class="project-tags">
             <span class="project-tag">Nuxt</span>
@@ -972,13 +1033,9 @@
             <text x="420" y="198" fill="#888" font-size="10">commission</text>
             <text x="60" y="60" fill="#888" font-size="11">Configurable rules · offline sync · PWA</text>
           </svg>
-          <p style="font-size:0.82rem;color:var(--accent);margin-bottom:10px;">
-            <strong>🔗 Live demo:</strong> <a href="https://confirmed-driving-census-situated.trycloudflare.com" target="_blank" rel="noopener noreferrer" style="color:var(--accent);">Agent Network local demo</a>
+          <p style="font-size:0.82rem;color:var(--text-secondary);margin-bottom:16px;">
+            <strong>Evidence:</strong> multi-tenant architecture, commission rules and role-based workflow case study. Live demo paused until a stable, owner-verified route is available.
           </p>
-          <details style="font-size:0.78rem;color:var(--text-secondary);margin-bottom:16px;padding:8px 12px;background:var(--bg);border:1px solid var(--border);border-radius:8px;">
-            <summary style="cursor:pointer;color:var(--text-secondary);">Demo credentials (admin123)</summary>
-            admin@platform.com · admin@demo-loan.co (subdomain demo-loan) · agent-1@demo-loan.co
-          </details>
           <div class="project-tags">
             <span class="project-tag">Nuxt</span>
             <span class="project-tag">Vue</span>
@@ -996,8 +1053,8 @@
             Malay-first community marketplace proof slice: browse listings, register and log in,
             then post a listing through a Nuxt API backed by local SQLite.
           </p>
-          <p style="font-size:0.82rem;color:var(--accent);margin-bottom:10px;">
-            <strong>🔗 Public API demo:</strong> <a href="https://contribution-costumes-multimedia-reasonable.trycloudflare.com/api/listings" target="_blank" rel="noopener noreferrer" style="color:var(--accent);">Browse live listings</a>
+          <p style="font-size:0.82rem;color:var(--text-secondary);margin-bottom:10px;">
+            <strong>Evidence:</strong> Nuxt API, SQLite persistence, authentication and listing workflow demonstrated locally; public route paused until stable hosting is verified.
           </p>
           <div class="project-tags">
             <span class="project-tag">Nuxt</span>
@@ -1015,8 +1072,8 @@
             Stateless Stremio add-on for Malay, Bollywood, and Asian discovery — 22 live catalogs
             powered by TMDB metadata, with streaming left to the user's configured providers.
           </p>
-          <p style="font-size:0.82rem;color:var(--accent);margin-bottom:10px;">
-            <strong>🔗 Install in Stremio:</strong> <a href="https://snap-huntington-recovered-goat.trycloudflare.com/manifest.json" target="_blank" rel="noopener noreferrer" style="color:var(--accent);">Open the manifest</a>
+          <p style="font-size:0.82rem;color:var(--text-secondary);margin-bottom:10px;">
+            <strong>Evidence:</strong> stateless catalog add-on architecture and TMDB metadata workflow; public manifest paused until stable hosting is verified.
           </p>
           <div class="project-tags">
             <span class="project-tag">Node.js</span>
@@ -1112,6 +1169,36 @@
   </section>
 
   <!-- ============================================
+       PROOF / CASE STUDIES
+       ============================================ -->
+  <section id="proof">
+    <div class="container">
+      <span class="section-label">How I Work</span>
+      <h2 class="section-title">Evidence, Not Noise</h2>
+      <div class="proof-grid">
+        <article class="proof-card fade-in">
+          <div class="proof-label">Case study 01</div>
+          <h3>Replace the workflow before replacing the software</h3>
+          <p>I map the current process, identify the costly hand-offs, then design the smallest reliable slice. The ERP work is proof that complex operations can be made understandable and supportable.</p>
+          <a class="proof-link" href="https://github.com/fdfrontdev/web-profile-deploy/tree/master/case-studies" target="_blank" rel="noopener noreferrer">Read the public-safe outline →</a>
+        </article>
+        <article class="proof-card fade-in">
+          <div class="proof-label">Case study 02</div>
+          <h3>Build the evidence into the delivery</h3>
+          <p>Tests, API contracts, architecture diagrams, audit records and runbooks are part of the work—not a presentation added later. CHRONO currently demonstrates 526 automated tests.</p>
+          <a class="proof-link" href="https://github.com/fdfrontdev/web-profile-deploy/tree/master/case-studies" target="_blank" rel="noopener noreferrer">Read the public-safe outline →</a>
+        </article>
+        <article class="proof-card fade-in">
+          <div class="proof-label">Case study 03</div>
+          <h3>Start with a bounded diagnostic</h3>
+          <p>For a workflow, quotation, inventory or reporting problem, I start with a fixed-scope RM350 diagnostic and a practical next-slice estimate. No vague “anything website” promise.</p>
+          <a class="proof-link" href="https://github.com/fdfrontdev/web-profile-deploy/tree/master/case-studies" target="_blank" rel="noopener noreferrer">Read the offer boundary →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
        SERVICES
        ============================================ -->
   <section id="services">
@@ -1119,39 +1206,23 @@
       <span class="section-label">What I Do</span>
       <h2 class="section-title">Services</h2>
       <div class="services-grid">
-
         <div class="service-card fade-in">
-          <div class="service-icon">💻</div>
-          <h3 class="service-title">Full-Stack Development</h3>
-          <p class="service-desc">
-            End-to-end web applications using Nuxt, Vue, Python, TypeScript.
-          </p>
+          <div class="service-icon">🧭</div>
+          <h3 class="service-title">Workflow &amp; API Diagnostic — RM350</h3>
+          <p class="service-desc">A 60–90 minute review of one workflow, quotation, inventory or reporting problem. You receive a workflow map, risk points and a prioritised next slice.</p>
         </div>
 
         <div class="service-card fade-in">
           <div class="service-icon">🏗️</div>
-          <h3 class="service-title">ERP &amp; Enterprise Systems</h3>
-          <p class="service-desc">
-            Custom replacements for expensive off-the-shelf software — I've done it for the palm oil industry, in production.
-          </p>
+          <h3 class="service-title">Bounded Internal Tools</h3>
+          <p class="service-desc">Dashboards, APIs and small business systems with clear scope, evidence, handover notes and an implementation estimate before build work starts.</p>
         </div>
 
         <div class="service-card fade-in">
-          <div class="service-icon">🤖</div>
-          <h3 class="service-title">AI/ML Integration</h3>
-          <p class="service-desc">
-            Prediction systems and automation that survive honest evaluation — including my own.
-          </p>
+          <div class="service-icon">🧪</div>
+          <h3 class="service-title">Architecture &amp; Delivery Review</h3>
+          <p class="service-desc">A practical review of a system or delivery process: risks, contracts, test gaps, supportability and the next decision. No paid marketplace upgrade required.</p>
         </div>
-
-        <div class="service-card fade-in">
-          <div class="service-icon">🏛️</div>
-          <h3 class="service-title">Architecture Consulting</h3>
-          <p class="service-desc">
-            System design, code review, technical strategy, and project planning.
-          </p>
-        </div>
-
       </div>
     </div>
   </section>
@@ -1227,9 +1298,9 @@
       <span class="section-label">Get in Touch</span>
       <h2 class="section-title">Let's Work Together</h2>
       <p class="contact-intro">
-        I'm currently available for freelance and remote contract work.
-        Tell me what your business runs on today. If it's expensive and doesn't fit —
-        that's exactly the conversation I want.
+        I'm available for full-time software engineering roles and selected fixed-scope consulting.
+        If a workflow is slow, manual or difficult to trust, tell me what it runs on today.
+        The first step is a clear diagnostic—not a free build.
       </p>
 
       <div class="contact-links">
@@ -1239,7 +1310,7 @@
         <a href="https://github.com/fdfrontdev" target="_blank" rel="noopener noreferrer" class="contact-link">🐙 GitHub</a>
       </div>
 
-      <a href="mailto:fdfrontdev@gmail.com" class="contact-cta">🚀 Start a conversation</a>
+      <a href="https://wa.me/60143043514" target="_blank" rel="noopener noreferrer" class="contact-cta">🚀 Start a WhatsApp diagnostic conversation</a>
     </div>
   </section>
 
