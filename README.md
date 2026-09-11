@@ -26,11 +26,20 @@ This is a static site. Deploy anywhere that serves HTML:
 
 - **Hero** — Name, tagline, location, CTA
 - **About** — Bio + stats cards
-- **Projects** — featured projects with verified evidence and live links where available
-- **Services** — 4 service offerings
+- **Projects** — selected projects with verified evidence and honest paused-status copy where a public route is unavailable
+- **Proof** — three privacy-safe case-study patterns and delivery principles
+- **Services** — workflow diagnostic, bounded internal tools, and architecture/delivery review
 - **Skills** — Tech stack badges by category
-- **Contact** — Email, LinkedIn, GitHub links
+- **Contact** — Email, WhatsApp, LinkedIn, GitHub links and the diagnostic CTA
 - **Footer**
+
+## Resume artifacts
+
+- `resume.html` — designed human-readable resume
+- `resume-ats.html` — one-column ATS source
+- `Mohamad_Firdaus_Resume_2026.pdf` — designed PDF
+- `Mohamad_Firdaus_Resume_ATS_2026.pdf` — ATS-friendly PDF
+- `Mohamad_Firdaus_Resume_2026.docx` — ATS-aligned Word document
 
 ## Design
 
