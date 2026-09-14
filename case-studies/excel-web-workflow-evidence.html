@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Synthetic evidence demo for a spreadsheet-to-web workflow rescue: validation, safe retries and progress logging.">
+  <title>Spreadsheet to Web Workflow — Synthetic Evidence | FIRDAUS BUILDS</title>
+  <style>
+    :root { color-scheme: dark; --bg:#08100d; --panel:#102019; --panel-2:#0c1713; --text:#edf7f0; --muted:#a6b8ad; --line:#244236; --accent:#55e38a; --warn:#f5c56b; --bad:#ff8e8e; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif; }
+    main { width:min(1120px,calc(100% - 32px)); margin:0 auto; padding:48px 0 72px; }
+    a { color:var(--accent); }
+    .eyebrow { color:var(--accent); font-size:.78rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+    h1,h2,h3 { line-height:1.2; }
+    h1 { max-width:780px; margin:12px 0 16px; font-size:clamp(2rem,5vw,4.2rem); }
+    h2 { margin-top:0; font-size:1.45rem; }
+    .lead { max-width:760px; color:var(--muted); font-size:1.08rem; }
+    .notice { border:1px solid #6f5931; background:#241c0d; color:#ffe6ae; border-radius:14px; padding:16px 18px; margin:24px 0; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; margin-top:28px; }
+    .panel { border:1px solid var(--line); background:linear-gradient(145deg,var(--panel),var(--panel-2)); border-radius:18px; padding:22px; }
+    .flow { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:8px; margin:18px 0 0; }
+    .flow-step { border:1px solid var(--line); border-radius:12px; padding:12px 10px; text-align:center; color:var(--muted); font-size:.88rem; }
+    .flow-step strong { display:block; color:var(--text); margin-bottom:4px; }
+    .controls { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+    button { border:1px solid var(--accent); border-radius:10px; background:var(--accent); color:#061109; cursor:pointer; font:inherit; font-weight:700; padding:10px 14px; }
+    button.secondary { background:transparent; color:var(--accent); }
+    button:focus-visible, a:focus-visible { outline:3px solid var(--warn); outline-offset:3px; }
+    button:disabled { cursor:not-allowed; opacity:.55; }
+    .legend { display:flex; flex-wrap:wrap; gap:12px; color:var(--muted); font-size:.88rem; }
+    .dot { display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:5px; background:var(--accent); }
+    .dot.bad { background:var(--bad); }
+    .dot.warn { background:var(--warn); }
+    .table-wrap { overflow-x:auto; border:1px solid var(--line); border-radius:12px; }
+    table { width:100%; min-width:620px; border-collapse:collapse; }
+    th,td { border-bottom:1px solid var(--line); padding:11px 12px; text-align:left; vertical-align:top; }
+    th { color:var(--muted); font-size:.82rem; letter-spacing:.05em; text-transform:uppercase; }
+    tr:last-child td { border-bottom:0; }
+    .status { font-weight:700; }
+    .status.ok { color:var(--accent); }
+    .status.bad { color:var(--bad); }
+    .status.warn { color:var(--warn); }
+    .log { min-height:210px; max-height:300px; overflow:auto; background:#050a08; border:1px solid var(--line); border-radius:12px; padding:14px; font:13px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace; white-space:pre-wrap; }
+    .metric-row { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin:18px 0; }
+    .metric { border:1px solid var(--line); border-radius:12px; padding:12px; }
+    .metric strong { display:block; font-size:1.45rem; color:var(--accent); }
+    .metric span { color:var(--muted); font-size:.85rem; }
+    .small { color:var(--muted); font-size:.9rem; }
+    .checklist { padding-left:20px; }
+    .checklist li { margin:8px 0; }
+    footer { border-top:1px solid var(--line); color:var(--muted); margin-top:28px; padding-top:18px; }
+    @media (max-width:760px) {
+      main { width:min(100% - 22px,680px); padding-top:30px; }
+      .grid { grid-template-columns:1fr; }
+      .flow { grid-template-columns:1fr; }
+      .metric-row { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="eyebrow">FIRDAUS BUILDS · evidence slice</div>
+    <h1>What a workflow rescue can make visible.</h1>
+    <p class="lead">A small, synthetic demonstration of the checks that matter when rows move from a spreadsheet into a web form: map the fields, reject bad input, log every result and resume safely after an interruption.</p>
+    <div class="notice"><strong>Important boundary:</strong> this is a local simulation with invented rows and a mock destination form. It does not log into a real website, use credentials or claim a previous client Excel/Selenium delivery.</div>
+
+    <section class="panel" aria-labelledby="flow-heading">
+      <h2 id="flow-heading">The slice</h2>
+      <div class="flow" aria-label="Workflow stages">
+        <div class="flow-step"><strong>1 · Read</strong>spreadsheet rows</div>
+        <div class="flow-step"><strong>2 · Check</strong>date, amount, ID</div>
+        <div class="flow-step"><strong>3 · Map</strong>to form fields</div>
+        <div class="flow-step"><strong>4 · Log</strong>success or failure</div>
+        <div class="flow-step"><strong>5 · Resume</strong>without duplicates</div>
+      </div>
+    </section>
+
+    <div class="grid">
+      <section class="panel" aria-labelledby="input-heading">
+        <h2 id="input-heading">Synthetic input rows</h2>
+        <p class="small">The duplicate and invalid rows are intentional. Real discovery would confirm the customer's field rules and test environment before automation.</p>
+        <div class="table-wrap">
+          <table>
+            <caption class="small" style="caption-side:bottom;padding:10px;text-align:left;">Sample data only — no customer or production records.</caption>
+            <thead><tr><th>Row ID</th><th>Date</th><th>Total</th><th>Destination</th></tr></thead>
+            <tbody>
+              <tr><td>ORD-1001</td><td>2026-09-14</td><td>RM 1,250.00</td><td>Mock form</td></tr>
+              <tr><td>ORD-1002</td><td>2026-09-15</td><td>RM 480.50</td><td>Mock form</td></tr>
+              <tr><td>ORD-1003</td><td>14/09/2026</td><td>not-a-number</td><td>Mock form</td></tr>
+              <tr><td>ORD-1002</td><td>2026-09-15</td><td>RM 480.50</td><td>Mock form</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="controls" aria-label="Demo controls">
+          <button id="validateButton" type="button">Validate rows</button>
+          <button id="runButton" class="secondary" type="button">Run clean pass</button>
+          <button id="interruptButton" class="secondary" type="button">Simulate interruption</button>
+          <button id="resumeButton" class="secondary" type="button">Resume safely</button>
+          <button id="resetButton" class="secondary" type="button">Reset</button>
+        </div>
+        <div class="legend"><span><i class="dot"></i>valid/processed</span><span><i class="dot bad"></i>rejected</span><span><i class="dot warn"></i>skipped/resume</span></div>
+      </section>
+
+      <section class="panel" aria-labelledby="result-heading">
+        <h2 id="result-heading">Validation and run evidence</h2>
+        <div class="metric-row" aria-live="polite">
+          <div class="metric"><strong id="validMetric">0</strong><span>valid rows</span></div>
+          <div class="metric"><strong id="rejectedMetric">0</strong><span>rejected rows</span></div>
+          <div class="metric"><strong id="processedMetric">0</strong><span>processed once</span></div>
+          <div class="metric"><strong id="skippedMetric">0</strong><span>skipped safely</span></div>
+        </div>
+        <div id="resultTable" class="table-wrap" aria-live="polite">
+          <p class="small" style="padding:14px;">Press “Validate rows” to inspect the sample.</p>
+        </div>
+        <h3>Progress log</h3>
+        <div id="progressLog" class="log" aria-live="polite">No run started.</div>
+      </section>
+    </div>
+
+    <div class="grid">
+      <section class="panel" aria-labelledby="buyer-heading">
+        <h2 id="buyer-heading">Why a buyer should care</h2>
+        <ul class="checklist">
+          <li>Bad dates and amounts are stopped before they reach the destination system.</li>
+          <li>Duplicate row IDs are visible instead of silently creating a second record.</li>
+          <li>A partial run leaves a readable log, so the next run can skip completed rows.</li>
+          <li>A bounded first slice makes the real acceptance decision concrete.</li>
+        </ul>
+      </section>
+      <section class="panel" aria-labelledby="acceptance-heading">
+        <h2 id="acceptance-heading">Acceptance questions for a real diagnostic</h2>
+        <ul class="checklist">
+          <li>Which spreadsheet columns map to which destination fields?</li>
+          <li>What date, currency, duplicate and required-field rules apply?</li>
+          <li>Is there a redacted workbook and non-production URL/account?</li>
+          <li>What exact success/failure log does the operator need?</li>
+          <li>What is the rollback or manual fallback if the destination is unavailable?</li>
+        </ul>
+      </section>
+    </div>
+
+    <footer>
+      <p><strong>Evidence status:</strong> synthetic demo, implementation evidence only. No client outcome, production deployment or Excel/Selenium case study is claimed.</p>
+      <p><a href="../index.html">Back to FIRDAUS BUILDS profile</a> · <a href="workflow-automation-diagnostic.md">Read the RM350 diagnostic offer</a></p>
+    </footer>
+  </main>
+  <script>
+    const sampleRows = [
+      { id: 'ORD-1001', date: '2026-09-14', amount: '1250.00' },
+      { id: 'ORD-1002', date: '2026-09-15', amount: '480.50' },
+      { id: 'ORD-1003', date: '14/09/2026', amount: 'not-a-number' },
+      { id: 'ORD-1002', date: '2026-09-15', amount: '480.50' }
+    ];
+    const demoState = { results: [], processedIds: new Set(), interrupted: false, logs: [] };
+
+    function normalizeDate(value) {
+      const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value);
+      if (!match) return null;
+      const candidate = new Date(Date.UTC(Number(match[1]), Number(match[2]) - 1, Number(match[3])));
+      return candidate.getUTCFullYear() === Number(match[1]) && candidate.getUTCMonth() === Number(match[2]) - 1 && candidate.getUTCDate() === Number(match[3]) ? value : null;
+    }
+
+    function validateAmount(value) {
+      const amount = Number(value);
+      return Number.isFinite(amount) && amount > 0 ? amount : null;
+    }
+
+    function validateRows(rows) {
+      const seenIds = new Set();
+      return rows.map((row) => {
+        const errors = [];
+        if (!row.id) errors.push('missing row ID');
+        if (seenIds.has(row.id)) errors.push('duplicate row ID');
+        if (!normalizeDate(row.date)) errors.push('date must use YYYY-MM-DD');
+        if (validateAmount(row.amount) === null) errors.push('total must be a positive number');
+        seenIds.add(row.id);
+        return { ...row, valid: errors.length === 0, errors, status: errors.length === 0 ? 'ready' : 'rejected' };
+      });
+    }
+
+    function buildRunPlan(results, processedIds) {
+      return results.filter((result) => result.valid && !processedIds.has(result.id));
+    }
+
+    function appendLog(message) {
+      demoState.logs.push(message);
+    }
+
+    function getRunSummary(results) {
+      return results.reduce((summary, result) => {
+        summary[result.status] = (summary[result.status] || 0) + 1;
+        return summary;
+      }, {});
+    }
+
+    function renderMetrics(results) {
+      const summary = getRunSummary(results);
+      document.getElementById('validMetric').textContent = results.filter((result) => result.valid).length;
+      document.getElementById('rejectedMetric').textContent = results.filter((result) => !result.valid).length;
+      document.getElementById('processedMetric').textContent = summary.processed || 0;
+      document.getElementById('skippedMetric').textContent = summary.skipped || 0;
+    }
+
+    function renderResults(results) {
+      const rows = results.map((result) => {
+        const details = result.errors.length ? result.errors.join('; ') : 'Field map passed';
+        const style = result.status === 'rejected' ? 'bad' : result.status === 'skipped' ? 'warn' : 'ok';
+        return `<tr><td>${result.id}</td><td>${result.date}</td><td>${result.amount}</td><td class="status ${style}">${result.status}</td><td>${details}</td></tr>`;
+      }).join('');
+      document.getElementById('resultTable').innerHTML = `<table><thead><tr><th>Row ID</th><th>Date</th><th>Total</th><th>Status</th><th>Reason</th></tr></thead><tbody>${rows}</tbody></table>`;
+      document.getElementById('progressLog').textContent = demoState.logs.join('\n') || 'No run started.';
+      renderMetrics(results);
+    }
+
+    function validateAndRender() {
+      demoState.results = validateRows(sampleRows);
+      demoState.results.forEach((result) => { if (result.valid) result.status = demoState.processedIds.has(result.id) ? 'processed' : 'ready'; });
+      appendLog('VALIDATE · inspected 4 synthetic rows; rejected invalid or duplicate input.');
+      renderResults(demoState.results);
+    }
+
+    function runBatch(interruptAfter) {
+      if (!demoState.results.length) demoState.results = validateRows(sampleRows);
+      const plan = buildRunPlan(demoState.results, demoState.processedIds);
+      if (!plan.length) {
+        appendLog('RESUME · nothing new to process; completed rows remain protected from duplicates.');
+        demoState.results.forEach((result) => { if (result.valid && demoState.processedIds.has(result.id)) result.status = 'skipped'; });
+        renderResults(demoState.results);
+        return;
+      }
+      plan.forEach((result, index) => {
+        if (interruptAfter !== null && index === interruptAfter) {
+          demoState.interrupted = true;
+          appendLog(`INTERRUPTION · stopped safely before ${result.id}; prior rows remain recorded.`);
+          return;
+        }
+        demoState.processedIds.add(result.id);
+        result.status = 'processed';
+        appendLog(`SUCCESS · ${result.id} mapped to mock form and recorded in the progress log.`);
+      });
+      demoState.results.forEach((result) => {
+        if (result.valid && demoState.processedIds.has(result.id) && result.status !== 'processed') result.status = 'skipped';
+      });
+      renderResults(demoState.results);
+    }
+
+    function resetDemo() {
+      demoState.results = [];
+      demoState.processedIds.clear();
+      demoState.interrupted = false;
+      demoState.logs = [];
+      document.getElementById('resultTable').innerHTML = '<p class="small" style="padding:14px;">Press “Validate rows” to inspect the sample.</p>';
+      document.getElementById('progressLog').textContent = 'No run started.';
+      renderMetrics([]);
+    }
+
+    document.getElementById('validateButton').addEventListener('click', validateAndRender);
+    document.getElementById('runButton').addEventListener('click', () => runBatch(null));
+    document.getElementById('interruptButton').addEventListener('click', () => { resetDemo(); validateAndRender(); runBatch(1); });
+    document.getElementById('resumeButton').addEventListener('click', () => runBatch(null));
+    document.getElementById('resetButton').addEventListener('click', resetDemo);
+  </script>
+</body>
+</html>
