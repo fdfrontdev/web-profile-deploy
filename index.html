@@ -43,7 +43,7 @@
       --border: #222222;
       --nav-bg: rgba(10, 10, 10, 0.85);
       --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      --max-width: 900px;
+      --max-width: 1100px;
     }
 
     html {
@@ -168,7 +168,7 @@
       font-size: 1.5rem;
       font-weight: 700;
       color: var(--text);
-      margin-bottom: 40px;
+      margin-bottom: 28px;
       padding-bottom: 14px;
       border-bottom: 1px solid var(--border);
       position: relative;
@@ -188,16 +188,18 @@
        HERO
        ============================================ */
     #hero {
-      min-height: 100vh;
+      min-height: auto;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 120px 24px 80px;
+      padding: 142px 24px 88px;
     }
 
     #hero .hero-content {
+      width: 100%;
       max-width: 680px;
+      box-sizing: border-box;
     }
 
     .hero-greeting {
@@ -214,6 +216,15 @@
       border: 1px solid var(--accent-glow);
       border-radius: 100px;
       background: var(--accent-glow);
+    }
+
+    .hero-person {
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
     }
 
     .hero-name {
@@ -303,8 +314,107 @@
       color: var(--accent-hover);
     }
 
-    /* ============================================
-       ABOUT
+        .hero-proof {
+          max-width: 720px;
+          margin: 20px auto 0;
+          padding: 10px 16px;
+          border: 1px solid var(--border);
+          border-radius: 10px;
+          color: var(--text-secondary);
+          background: rgba(20, 20, 20, 0.7);
+          font-size: 0.82rem;
+          line-height: 1.5;
+        }
+
+        .hero-resume-link {
+          display: inline-block;
+          margin-top: 18px;
+          color: var(--text-secondary);
+          font-size: 0.82rem;
+        }
+        .hero-resume-link:hover {
+          color: var(--accent);
+        }
+
+        .selected-work-intro {
+          max-width: 660px;
+          margin: -10px 0 28px;
+          color: var(--text-secondary);
+          font-size: 0.92rem;
+        }
+
+        .project-proof-line {
+          margin: -4px 0 16px;
+          color: var(--text-secondary);
+          font-size: 0.8rem;
+          line-height: 1.55;
+        }
+        .project-proof-line strong {
+          color: var(--accent);
+        }
+
+        .more-builds {
+          margin-top: 28px;
+          border-top: 1px solid var(--border);
+          padding-top: 22px;
+        }
+        .more-builds summary {
+          cursor: pointer;
+          color: var(--accent);
+          font-weight: 600;
+          font-size: 0.9rem;
+          list-style-position: inside;
+        }
+        .more-builds-grid {
+          margin-top: 20px;
+        }
+
+        .process-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 16px;
+        }
+        .process-step {
+          padding: 22px;
+          background: var(--bg-card);
+          border: 1px solid var(--border);
+          border-radius: 12px;
+        }
+        .process-number {
+          color: var(--accent);
+          font-size: 0.72rem;
+          font-weight: 700;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          margin-bottom: 10px;
+        }
+        .process-step h3 {
+          font-size: 0.98rem;
+          margin-bottom: 8px;
+        }
+        .process-step p {
+          color: var(--text-secondary);
+          font-size: 0.82rem;
+          line-height: 1.6;
+        }
+
+        .service-card-featured {
+          border-color: var(--accent);
+          box-shadow: 0 0 0 1px var(--accent-glow);
+        }
+        .service-action {
+          display: inline-block;
+          margin-top: 16px;
+          color: var(--accent);
+          font-size: 0.82rem;
+          font-weight: 700;
+        }
+        .service-action:hover {
+          text-decoration: underline;
+        }
+
+        /* ============================================
+           ABOUT
        ============================================ */
     #about {
       background: var(--bg-card);
@@ -460,7 +570,7 @@
     /* ============================================
        PROOF / CASE STUDIES
        ============================================ */
-    #proof {
+    #process {
       background: var(--bg);
     }
 
@@ -772,7 +882,8 @@
         grid-template-columns: 1fr;
       }
 
-      .proof-grid {
+      .proof-grid,
+      .process-grid {
         grid-template-columns: 1fr;
       }
 
@@ -813,11 +924,11 @@
        ============================================ -->
   <nav>
     <div class="nav-inner">
-      <a href="#hero" class="nav-logo"><span>MF</span>.dev</a>
+      <a href="#hero" class="nav-logo"><span>FIRDAUS</span> BUILDS</a>
       <ul class="nav-links" id="navLinks">
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#proof">Proof</a></li>
+        <li><a href="#process">Process</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -835,19 +946,17 @@
        ============================================ -->
   <section id="hero">
     <div class="hero-content">
-      <span class="hero-greeting">Available for full-time software engineering · Selected workflow automation</span>
-      <h1 class="hero-name">Mohamad Firdaus</h1>
-      <p class="hero-tagline">I build software that turns complex operations into reliable systems.</p>
-      <p class="hero-subtitle">Senior Software Engineer · ERP/MES · C#/.NET · Python · Nuxt/Vue · Penang, Malaysia</p>
-      <div class="hero-trust">
-        <span>🏭 ERP/MES</span><span>🧩 Workflow automation</span><span>⚙️ C#/.NET</span><span>🤖 AI-enabled tools</span><span>Proof over promises</span>
-      </div>
+      <span class="hero-greeting">ERP/MES · Workflow automation · C#/.NET · Python · AI-enabled tools</span>
+      <div class="hero-person">Mohamad Firdaus</div>
+      <h1 class="hero-name">I build the systems behind complex operations.</h1>
+      <p class="hero-tagline">I turn slow, manual or hard-to-trust workflows into reliable software.</p>
+      <p class="hero-subtitle">Senior Software Engineer · Full-stack systems builder · Penang, Malaysia</p>
+      <div class="hero-proof">Production ERP and SaaS work · Public C#/.NET project · 526 automated tests in CHRONO</div>
       <div class="hero-buttons">
-        <a href="mailto:fdfrontdev@gmail.com" class="hero-cta">👋 Let's Talk</a>
-        <a href="https://wa.me/60143043514" target="_blank" rel="noopener noreferrer" class="hero-cta hero-cta-secondary">💬 WhatsApp</a>
-        <a href="Mohamad_Firdaus_Resume_ATS_2026.pdf" class="hero-cta hero-cta-secondary" download>📄 Download ATS Resume</a>
-        <a href="resume.html" class="hero-cta hero-cta-secondary">🖥️ View designed resume</a>
+        <a href="https://wa.me/60143043514?text=Hi%20Firdaus%2C%20I%20want%20to%20discuss%20a%20workflow%20or%20system%20problem.%20Source%3Dportfolio" target="_blank" rel="noopener noreferrer" class="hero-cta" data-cta="hero-whatsapp">💬 Start a WhatsApp conversation</a>
+        <a href="#projects" class="hero-cta hero-cta-secondary" data-cta="hero-selected-work">See selected work</a>
       </div>
+      <a href="Mohamad_Firdaus_Resume_ATS_2026.pdf" class="hero-resume-link" download data-cta="hero-resume">Hiring? Download ATS resume →</a>
     </div>
   </section>
 
@@ -906,7 +1015,8 @@
   <section id="projects">
     <div class="container">
       <span class="section-label">Work</span>
-      <h2 class="section-title">Featured Projects</h2>
+      <h2 class="section-title">Selected Work</h2>
+      <p class="selected-work-intro">A small set of systems that show how I think: understand the operation, build the right slice, and leave evidence behind.</p>
       <div class="projects-grid">
 
         <div class="project-card fade-in">
@@ -917,6 +1027,7 @@
             refinery operations — database to frontend to deployment. Production software for a
             confidential refinery client.
           </p>
+          <p class="project-proof-line"><strong>Proof:</strong> Public-safe architecture outline showing the ERP core and operational modules.</p>
           <svg class="project-svg" viewBox="0 0 800 300" role="img" aria-label="ERP module map">
             <rect x="330" y="110" width="140" height="60" rx="10" fill="#141414" stroke="#22c55e" stroke-width="2"/>
             <text x="400" y="146" text-anchor="middle" fill="#e8e8e8" font-size="13" font-weight="600">ERP Core</text>
@@ -943,6 +1054,7 @@
             <span class="project-tag">Prisma</span>
             <span class="project-tag">PostgreSQL</span>
           </div>
+          <a class="proof-link" href="https://github.com/fdfrontdev/web-profile-deploy/blob/master/case-studies/erp-operations-platform.md" target="_blank" rel="noopener noreferrer" data-cta="project-erp-case-study">Read the ERP case study →</a>
         </div>
 
         <div class="project-card fade-in">
@@ -952,6 +1064,7 @@
             SaaS platform for engineering teams — projects, delivery standards, and people in
             one system. Built on the same standards I use to ship.
           </p>
+          <p class="project-proof-line"><strong>Proof:</strong> Architecture and implementation case study; public demo paused until a stable route is available.</p>
           <svg class="project-svg" viewBox="0 0 800 300" role="img" aria-label="EMS system diagram">
             <rect x="30" y="40" width="160" height="60" rx="8" fill="#141414" stroke="#22c55e"/>
             <text x="110" y="76" text-anchor="middle" fill="#e8e8e8" font-size="12">Teams &amp; Roles</text>
@@ -986,6 +1099,7 @@
             ML forex decision-support system. My own backtest lied to me for two weeks — I
             audited it, published the leak, and rebuilt. Honest numbers only.
           </p>
+          <p class="project-proof-line"><strong>Proof:</strong> An auditable ML pipeline with calibrated probabilities, risk gates and no-lookahead discipline.</p>
           <svg class="project-svg" viewBox="0 0 800 300" role="img" aria-label="TradeAI pipeline">
             <rect x="20" y="120" width="120" height="50" rx="8" fill="#141414" stroke="#22c55e"/>
             <text x="80" y="150" text-anchor="middle" fill="#e8e8e8" font-size="12">Market Data</text>
@@ -1046,6 +1160,10 @@
           </div>
         </div>
 
+      <details class="more-builds">
+        <summary>More builds — explore the wider portfolio</summary>
+        <div class="projects-grid more-builds-grid">
+
         <div class="project-card fade-in">
           <div class="project-icon">🏘️</div>
           <h3 class="project-title">Jiran — Local Community Marketplace</h3>
@@ -1083,6 +1201,8 @@
             <span class="project-tag">REST API</span>
           </div>
         </div>
+        </div>
+      </details>
 
         <div class="project-card fade-in">
           <div class="project-icon">⚡</div>
@@ -1092,7 +1212,7 @@
             Free open-source GTA V mod where powers leave a paper trail: witnesses, news reports, notoriety, and a police force that remembers your face. 526 automated tests.
           </p>
           <p style="font-size:0.82rem;color:var(--accent);margin-bottom:10px;">
-            <strong>🔗 Page + download:</strong> <a href="chrono.html" style="color:var(--accent);">chrono.html</a> · <a href="https://github.com/fdfrontdev/gtav-chrono/releases/tag/v1.0.2" target="_blank" rel="noopener noreferrer" style="color:var(--accent);">v1.0.2 release</a>
+            <strong>🔗 Proof:</strong> <a href="chrono.html" style="color:var(--accent);" data-cta="project-chrono-page">Open the CHRONO page and download →</a>
           </p>
           <div class="project-tags">
             <span class="project-tag">C#</span>
@@ -1130,6 +1250,10 @@
           </div>
         </div>
 
+      <details class="more-builds">
+        <summary>More builds — explore the wider portfolio</summary>
+        <div class="projects-grid more-builds-grid">
+
         <div class="project-card fade-in">
           <div class="project-icon">🧠</div>
           <h3 class="project-title">Private Local AI Assistant</h3>
@@ -1164,6 +1288,8 @@
           </div>
         </div>
 
+        </div>
+      </details>
       </div>
     </div>
   </section>
@@ -1171,30 +1297,37 @@
   <!-- ============================================
        PROOF / CASE STUDIES
        ============================================ -->
-  <section id="proof">
+  <section id="process">
     <div class="container">
       <span class="section-label">How I Work</span>
-      <h2 class="section-title">Evidence, Not Noise</h2>
-      <div class="proof-grid">
-        <article class="proof-card fade-in">
-          <div class="proof-label">Case study 01</div>
-          <h3>Replace the workflow before replacing the software</h3>
-          <p>I map the current process, identify the costly hand-offs, then design the smallest reliable slice. The ERP work is proof that complex operations can be made understandable and supportable.</p>
-          <a class="proof-link" href="https://github.com/fdfrontdev/web-profile-deploy/tree/master/case-studies" target="_blank" rel="noopener noreferrer">Read the public-safe outline →</a>
+      <h2 class="section-title">A clear path from problem to proof</h2>
+      <div class="process-grid">
+        <article class="process-step fade-in">
+          <div class="process-number">01 · Map</div>
+          <h3>Understand the workflow</h3>
+          <p>We identify the current process, constraints, hand-offs and the cost of leaving the problem unsolved.</p>
         </article>
-        <article class="proof-card fade-in">
-          <div class="proof-label">Case study 02</div>
-          <h3>Build the evidence into the delivery</h3>
-          <p>Tests, API contracts, architecture diagrams, audit records and runbooks are part of the work—not a presentation added later. CHRONO currently demonstrates 526 automated tests.</p>
-          <a class="proof-link" href="https://github.com/fdfrontdev/web-profile-deploy/tree/master/case-studies" target="_blank" rel="noopener noreferrer">Read the public-safe outline →</a>
+        <article class="process-step fade-in">
+          <div class="process-number">02 · Slice</div>
+          <h3>Choose the useful next outcome</h3>
+          <p>We define the smallest reliable slice that can create value without turning the first step into a vague rebuild.</p>
         </article>
-        <article class="proof-card fade-in">
-          <div class="proof-label">Case study 03</div>
-          <h3>Start with a bounded diagnostic</h3>
-          <p>For a workflow, quotation, inventory or reporting problem, I start with a fixed-scope RM350 diagnostic and a practical next-slice estimate. No vague “anything website” promise.</p>
-          <a class="proof-link" href="https://github.com/fdfrontdev/web-profile-deploy/tree/master/case-studies" target="_blank" rel="noopener noreferrer">Read the offer boundary →</a>
+        <article class="process-step fade-in">
+          <div class="process-number">03 · Verify</div>
+          <h3>Build with evidence</h3>
+          <p>Contracts, tests, architecture notes and honest limits are part of delivery—not a presentation added later.</p>
+        </article>
+        <article class="process-step fade-in">
+          <div class="process-number">04 · Handover</div>
+          <h3>Leave the system understandable</h3>
+          <p>You receive the operating context, risks and next decisions needed to support or extend the work.</p>
         </article>
       </div>
+      <article class="proof-card process-proof fade-in">
+        <div class="proof-label">Why this matters</div>
+        <h3>Evidence over attractive claims</h3>
+        <p>When my own ML backtest produced attractive results, I audited it, found the leak and documented the failure. That standard carries into every system I build.</p>
+      </article>
     </div>
   </section>
 
@@ -1206,10 +1339,11 @@
       <span class="section-label">What I Do</span>
       <h2 class="section-title">Services</h2>
       <div class="services-grid">
-        <div class="service-card fade-in">
+        <div class="service-card service-card-featured fade-in">
           <div class="service-icon">🧭</div>
           <h3 class="service-title">Workflow &amp; API Diagnostic — RM350</h3>
           <p class="service-desc">A 60–90 minute review of one workflow, quotation, inventory or reporting problem. You receive a workflow map, risk points and a prioritised next slice.</p>
+          <a href="https://wa.me/60143043514?text=Hi%20Firdaus%2C%20I%20want%20to%20ask%20about%20the%20RM350%20workflow%20and%20API%20diagnostic.%20Source%3Dportfolio" target="_blank" rel="noopener noreferrer" class="service-action" data-cta="service-diagnostic">Ask about the diagnostic →</a>
         </div>
 
         <div class="service-card fade-in">
@@ -1304,13 +1438,13 @@
       </p>
 
       <div class="contact-links">
-        <a href="mailto:fdfrontdev@gmail.com" class="contact-link">📧 fdfrontdev@gmail.com</a>
-        <a href="https://wa.me/60143043514" target="_blank" rel="noopener noreferrer" class="contact-link">💬 WhatsApp</a>
+        <a href="mailto:fdfrontdev@gmail.com?subject=Portfolio%20enquiry%20%E2%80%94%20software%20engineering%20%2F%20workflow%20diagnostic" class="contact-link" data-cta="contact-email">📧 fdfrontdev@gmail.com</a>
+        <a href="https://wa.me/60143043514?text=Hi%20Firdaus%2C%20I%20want%20to%20discuss%20a%20workflow%20or%20system%20problem.%20Source%3Dportfolio" target="_blank" rel="noopener noreferrer" class="contact-link" data-cta="contact-whatsapp-link">💬 WhatsApp</a>
         <a href="https://www.linkedin.com/in/mohamad-firdaus-mohamad-fauzi-310672294" target="_blank" rel="noopener noreferrer" class="contact-link">🔗 LinkedIn</a>
         <a href="https://github.com/fdfrontdev" target="_blank" rel="noopener noreferrer" class="contact-link">🐙 GitHub</a>
       </div>
 
-      <a href="https://wa.me/60143043514" target="_blank" rel="noopener noreferrer" class="contact-cta">🚀 Start a WhatsApp diagnostic conversation</a>
+      <a href="https://wa.me/60143043514?text=Hi%20Firdaus%2C%20I%20want%20to%20discuss%20a%20workflow%20or%20system%20problem.%20Source%3Dportfolio" target="_blank" rel="noopener noreferrer" class="contact-cta" data-cta="contact-whatsapp">💬 Start a WhatsApp diagnostic conversation</a>
     </div>
   </section>
 
