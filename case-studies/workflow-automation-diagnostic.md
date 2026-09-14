@@ -23,6 +23,10 @@ A focused diagnostic for an SME whose work is slowed by spreadsheets, duplicated
 - Automation handover and documentation
 - Optional support arrangement
 
-## Evidence boundary
+## Evidence demo
 
-This is a productised service offer, not a fabricated client case study. Until a paid engagement produces verified results, the public claim is limited to the diagnostic scope and Firdaus BUILDS' demonstrated software-engineering capability.
+A buyer-facing synthetic implementation demonstration shows the validation, duplicate detection, interruption recovery and progress logging discussed in this diagnostic: [Open the spreadsheet-to-web workflow evidence demo](excel-web-workflow-evidence.html).
+
+This is synthetic data and implementation evidence only. It is not a client case study, production deployment or claim of prior Excel/Selenium delivery.
+
+## Evidence boundary
