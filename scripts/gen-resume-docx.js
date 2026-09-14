@@ -68,11 +68,11 @@ function role(title, period, company, items) {
 
 const children = [
   new Paragraph({ children: [new TextRun({ text: 'Mohamad Firdaus', font: 'Arial', bold: true, size: 36, color: '111827' })], spacing: { after: 25 } }),
-  new Paragraph({ children: [new TextRun({ text: 'Senior Software Engineer — ERP/MES, Manufacturing Systems, C#/.NET, Python and Full-Stack Delivery', font: 'Arial', bold: true, color: GREEN, size: 20 })], spacing: { after: 25 } }),
+  new Paragraph({ children: [new TextRun({ text: 'Senior Software Engineer | ERP/MES & Manufacturing Systems | C#/.NET, Python, Full-Stack', font: 'Arial', bold: true, color: GREEN, size: 20 })], spacing: { after: 25 } }),
   new Paragraph({ children: [new TextRun({ text: 'Balik Pulau, Penang · 014-3043514 · fdfrontdev@gmail.com · linkedin.com/in/mohamad-firdaus-mohamad-fauzi-310672294 · github.com/fdfrontdev · fdfrontdev.github.io/web-profile-deploy', font: 'Arial', color: GRAY, size: 15 })], spacing: { after: 100 } }),
 
   section('Professional Summary'),
-  textParagraph('Self-taught software engineer with 15+ years across enterprise systems, ERP/MES, e-commerce, education and workflow automation. Architected and built a production ERP replacing SAP/Navision for refinery operations, including manufacturing execution, supply chain, finance, HR and procurement. Strongest evidence is in C#/.NET foundations, Nuxt/Vue/TypeScript, Python, SQL and end-to-end delivery from requirements through support.'),
+  textParagraph('Senior software engineer with 15+ years across enterprise systems, ERP/MES, e-commerce, education and workflow automation. Architected and built a production ERP replacing SAP/Navision for refinery operations across manufacturing execution, supply chain, finance, HR and procurement. Strongest evidence is end-to-end delivery across requirements, architecture, C#/.NET foundations, Nuxt/Vue/TypeScript, Python, SQL, testing and supportability.'),
 
   section('Core Skills'),
   textParagraph('Enterprise: ERP architecture · MES / Industry 4.0 · workflow design · system integration · requirements · technical leadership'),
@@ -82,7 +82,7 @@ const children = [
   section('Professional Experience'),
   ...role('Senior Software Engineer / Head of Software', '2024–Aug 2026', 'GlobalIoT Sdn Bhd', [
     'Architected and built the core ERP replacing SAP/Navision for refinery operations across manufacturing execution, supply chain, finance, HR and procurement.',
-    'Delivered mission-critical production software for a confidential refinery client; downtime represented real operational risk.',
+    'Designed the system around operational continuity, data integrity and support after release.',
     'Led engineers and established code review, CI/CD, development standards, QA, support and mentoring practices.',
   ]),
   ...role('Web Developer', '2022–2024', 'ePandu Sdn Bhd', [
