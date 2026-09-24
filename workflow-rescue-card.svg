@@ -13,9 +13,9 @@
   <rect width="1200" height="630" fill="url(#bg)"/>
   <rect x="42" y="42" width="1116" height="546" rx="28" fill="none" stroke="#263241"/>
   <text x="82" y="112" fill="#22c55e" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" letter-spacing="4">FIRDAUS BUILDS</text>
-  <text x="82" y="178" fill="#f8fafc" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="700">When work gets messy,</text>
-  <text x="82" y="232" fill="#f8fafc" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="700">start with the map.</text>
-  <text x="84" y="274" fill="#a8b3c2" font-family="Arial, Helvetica, sans-serif" font-size="20">One workflow. One clear next step. RM350 first review.</text>
+  <text x="82" y="178" fill="#f8fafc" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="700">Make work</text>
+  <text x="82" y="236" fill="#f8fafc" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="700">make sense.</text>
+  <text x="84" y="278" fill="#a8b3c2" font-family="Arial, Helvetica, sans-serif" font-size="20">Workflow Rescue Diagnostic · RM350</text>
 
   <g filter="url(#shadow)">
     <rect x="82" y="330" width="438" height="174" rx="18" fill="#151d28" stroke="#d97706" stroke-opacity="0.7"/>
